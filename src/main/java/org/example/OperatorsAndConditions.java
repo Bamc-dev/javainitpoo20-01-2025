@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class OperatorsAndConditions {
     public static void main(String[] args) {
         // **** OPERATORS ****
@@ -50,6 +52,126 @@ public class OperatorsAndConditions {
 
         System.out.println("Decrement : "+(--i)); // 11
 
+
+        // ------------ Conditions -----------
+        int number = 20;
+        //If else
+        if(number > 0)
+        {
+            System.out.println("Number is positive");
+        } else if (number < 0) {
+            System.out.println("Number is negative");
+        }else {
+            System.out.println("Number is Zero");
+        }
+
+        //Exercice interval
+        //Saisir = Entrée utilisateur
+        //Saisir un nombre et dire s'il fait parti de l'interval -4 (exclus) et 9 (inclus) ==>
+        Scanner input = new Scanner(System.in);
+        System.out.println("Entrer un nombre : ");
+        //int userInput = input.nextInt();
+        int userInput = 5;
+        if (userInput > -4 && userInput <= 9)
+        {
+            System.out.println(userInput+" est inclus dans l'intervalle ]-4, 9]");
+        }
+        else
+        {
+            System.out.println("Ne fait pas partie de l'intervalle");
+        }
+
+        //Switch case
+        //Utilisé pour des conditions "à la carte"
+        System.out.println("Numéro de jour : ");
+        //int jour = input.nextInt();
+        int jour = 4;
+        switch (jour)
+        {
+            case 1:
+                System.out.println("Lundi");
+                break;
+            case 2:
+                System.out.println("Mardi");
+                break;
+            case 3:
+                System.out.println("Mercredi");
+                break;
+            case 4:
+                System.out.println("Jeudi");
+                break;
+            case 5:
+                System.out.println("Vendredi");
+                break;
+            case 6:
+                System.out.println("Samedi");
+                break;
+            case 7:
+                System.out.println("Dimanche");
+                break;
+            default:
+                System.out.println("Veuillez saisir le nombre de jours entre 1 et 7");
+        }
+
+        switch (jour)
+        {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Jour de travail");
+                break;
+            case 6:
+            case 7:
+                System.out.println("Weekend");
+                break;
+            default:
+                System.out.println("Veuillez saisir le nombre de jours entre 1 et 7");
+
+        }
+
+        //Nouvelle syntaxe (java 14) : permet d'écrire des instructions plus compact et lisible
+        switch (jour)
+        {
+            case 1 -> {
+                System.out.println("Lundi");
+                System.out.println("Debut de la semaine");
+            }
+            case 2 ->{
+                System.out.println("Mardi");
+            }
+            case 3 ->{
+                System.out.println("Mercredi");
+            }
+            case 4 ->
+            {
+                System.out.println("Jeudi");
+            }
+            case 5 -> System.out.println("Vendredi");
+            case 6 -> System.out.println("Samedi");
+            case 7 -> System.out.println("Dimanche");
+            default -> System.out.println("Veuillez saisir le numero du jours entre 1 et 7");
+        }
+        switch (jour)
+        {
+            case 1,2,3,4,5 -> System.out.println("Jour de travail");
+            case 6,7 -> System.out.println("Weekend");
+            default -> System.out.println("\"Veuillez saisir le numero du jours entre 1 et 7\"");
+        }
+
+        //Ternaire
+        int age = 19;
+        String message;
+        char genre = 'F';
+
+        //Si vrai, on prend la valeur de gauche, et on affecte à message, si faux, on prend la valeur de droite
+        message = (age >= 18) ? "majeur" : "mineur";
+
+        message = (age >= 18)
+                ? ((genre == 'F') ? "majeur et une femme" : "majeur et un homme")
+                : ((genre == 'F') ? "mineur et une fille" : "mineur et un garçon");
+        System.out.println(message);
 
     }
 }
