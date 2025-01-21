@@ -16,5 +16,7 @@ public class Application {
 
         IGestionUtilisateur v3 = new GestionUtilisateurAvecRoles();
         v1.addUser(new Client());
+        //Default
+        v2.printMyFunction();
     }
 }

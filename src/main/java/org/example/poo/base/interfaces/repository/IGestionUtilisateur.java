@@ -25,6 +25,7 @@ public interface IGestionUtilisateur {
      void updateUser(Utilisateur user);
      Utilisateur getUser(int id);
      List<Utilisateur> getAllUsers();
+     //Default
      default void printMyFunction()
      {
          System.out.println("Hello, that my print function from my Interface");

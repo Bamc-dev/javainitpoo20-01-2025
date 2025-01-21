@@ -1,7 +1,6 @@
-package org.example.poo.base.abstraction;
+package org.example.poo.base.association;
 
-public class Vendeur extends Utilisateur {
-
+public class Vendeur extends Utilisateur{
     private String numeroVendeur;
     private double ventesTotals;
 
