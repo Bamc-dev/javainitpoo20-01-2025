@@ -1,4 +1,4 @@
-package org.example.poo.base.exosUML;
+package org.example.exosFilRouge;
 
 public class Player extends Entity{
 

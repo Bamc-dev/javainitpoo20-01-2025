@@ -1,4 +1,4 @@
-package org.example.poo.base.exosUML;
+package org.example.exosFilRouge;
 
 public class Entity {
     private String nom;
