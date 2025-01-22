@@ -1,5 +1,8 @@
 package org.example.exosFilRouge;
 
+import org.example.exosFilRouge.exceptions.NegativHealthException;
+import org.example.exosFilRouge.exceptions.UnrespectedMaxHealthException;
+
 public class Monster extends NPC{
     private int damage;
     public Monster(String nom, double x, double y, int damage) {
@@ -9,8 +12,14 @@ public class Monster extends NPC{
 
     public void attack(Player target)
     {
-        System.out.println(this.getNom() + " attacks " + target.getNom() + " for "+this.damage+" damage!");
-        target.setHealth(target.getHealth()-damage);
+        try{
+            target.setHealth(target.getHealth()-damage);
+            System.out.println(this.getNom() + " attacks " + target.getNom() + " for "+this.damage+" damage!");
+        }catch (UnrespectedMaxHealthException | NegativHealthException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
