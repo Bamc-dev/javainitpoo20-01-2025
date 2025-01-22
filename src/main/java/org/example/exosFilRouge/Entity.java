@@ -1,6 +1,6 @@
 package org.example.exosFilRouge;
 
-public class Entity {
+public abstract class Entity implements IUpdatable{
     private String nom;
     private double x, y;
 
@@ -34,8 +34,8 @@ public class Entity {
         this.y = y;
     }
 
-    public void update()
-    {
+    @Override
+    public void update() {
         System.out.println(this.nom + " update!");
     }
 

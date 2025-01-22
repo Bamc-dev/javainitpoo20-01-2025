@@ -17,6 +17,14 @@ public class Player extends Entity{
         System.out.println("Nouvelle position : ("+super.getX()+", "+super.getY()+")");
     }
 
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
     @Override
     public void update() {
         super.update();

@@ -1,23 +1,27 @@
 package org.example.exosFilRouge;
 
+import java.util.List;
+
 public class Game {
     public static void main(String[] args) {
         Player player = new Player("Hero", 0, 0, 100);
-        NPC npc1 = new NPC("Goblin", 5, 5);
-        NPC npc2 = new NPC("Orc", -3, 2);
+        NPC seller = new Seller("Goblin", 5, 5, List.of("Epee", "Bouclier", "Arc"));
+        Monster monster = new Monster("Orc", -3, 2, 10);
+        Scene scene = new Scene(List.of(player, seller, monster));
+        scene.renderAllEntity();
 
-        player.render();
-        npc1.render();
-        npc2.render();
-
-        System.out.println("\n--- Mise à jour des entités ---");
-        player.update();
-        npc1.update();
-        npc2.update();
+        //Interaction
+        System.out.println("----- Interactions -------");
+        seller.interact();
+        monster.interact();
+        monster.attack(player);
 
         System.out.println("\n--- Déplacement du joueur ---");
         player.move(2, 3);
         System.out.println("Player movement X : "+player.getX()+ ", Y : "+player.getY());
+        player.update();
+
+        scene.renderAllEntity();
         player.update();
     }
 }

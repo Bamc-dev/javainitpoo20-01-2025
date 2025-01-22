@@ -1,6 +1,6 @@
 package org.example.exosFilRouge;
 
-public class NPC extends Entity{
+public abstract class NPC extends Entity{
 
     public NPC(String nom, double x, double y) {
         super(nom, x, y);
@@ -22,4 +22,5 @@ public class NPC extends Entity{
         super.update();
         this.wander();
     }
+    public abstract void interact();
 }
